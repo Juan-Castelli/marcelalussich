@@ -29,12 +29,11 @@ export default {
     },
   ],
 
-  valores: [
-    { titulo: "Experiencia", texto: "Más de 20 años produciendo eventos en Uruguay." },
-    { titulo: "Equipo", texto: "Seleccionado a medida para cada evento." },
-    { titulo: "Dedicación", texto: "Acompañamos cada etapa, del plan al desarme." },
-    { titulo: "Éxito", texto: "Marcas que vuelven a elegirnos, año tras año." },
-  ],
+  // La sección "Por qué nosotros" del sitio anterior eran estas cuatro palabras
+  // sueltas, sin texto. No se está mostrando. Queda acá como registro por si se
+  // decide recuperarla con contenido real detrás de cada una.
+  // valores: ["Experiencia", "Equipo", "Dedicación", "Éxito"],
+
 
   equipo: [
     { nombre: "Marcela", rol: "Directora", img: "marcela-directora" },

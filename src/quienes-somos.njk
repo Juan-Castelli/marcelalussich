@@ -36,20 +36,6 @@ description: Un equipo con más de 20 años organizando eventos empresariales y 
 
 <section class="section section--tint">
   <div class="wrap">
-    <h2 class="section__title">Por qué nosotros</h2>
-    <ul class="grid grid--valores">
-      {%- for v in empresa.valores %}
-      <li class="valor">
-        <h3>{{ v.titulo }}</h3>
-        <p>{{ v.texto }}</p>
-      </li>
-      {%- endfor %}
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
     <h2 class="section__title">El equipo</h2>
     <ul class="grid grid--equipo">
       {%- for p in empresa.equipo %}
@@ -65,7 +51,8 @@ description: Un equipo con más de 20 años organizando eventos empresariales y 
 
 <section class="cta">
   <div class="wrap">
-    <h2>Trabajemos juntos</h2>
+    <h2>¿Tenés un evento en mente?</h2>
+    <p>Contanos qué necesitás y armamos una propuesta.</p>
     <p class="hero__actions"><a class="btn btn--primary" href="/contacto/">Contactanos</a></p>
   </div>
 </section>
