@@ -1,0 +1,13 @@
+# URLs del WordPress anterior. Sin esto se pierden los enlaces ya publicados
+# y lo que tenga indexado Google.
+/home                 /                  301
+/home/page/*          /                  301
+/about-us             /quienes-somos/    301
+/contact-us           /contacto/         301
+/contactenos          /contacto/         301
+/portfolio/page/*     /portfolio/        301
+
+# WordPress ya no existe detrás de este dominio.
+/wp-admin/*           /                  301
+/wp-login.php         /                  301
+/feed                 /                  301

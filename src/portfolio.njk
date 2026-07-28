@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+permalink: /portfolio/
+title: Clientes
+description: Marcas y organizaciones que confiaron en Marcela Lussich Eventos & Promociones para sus eventos y activaciones en Uruguay.
+---
+
+<section class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Clientes</p>
+    <h1>Marcas que confiaron en nosotros</h1>
+    <div class="prose">
+      <p>
+        Del sector bancario al automotriz, de la salud a los grandes comercios.
+        Estas son algunas de las marcas y organizaciones con las que trabajamos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <ul class="grid grid--logos">
+      {%- for c in clientes %}
+      <li class="logo">
+        <img src="/assets/img/clientes/{{ c.file }}" alt="{{ c.name }}" loading="lazy" decoding="async">
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>¿Sumamos tu marca?</h2>
+    <p class="hero__actions"><a class="btn btn--primary" href="/contacto/">Contactanos</a></p>
+  </div>
+</section>

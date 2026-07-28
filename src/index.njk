@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+permalink: /
+---
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ site.ciudades | join(" · ") }}</p>
+    <h1 class="hero__title">Experiencias<br>que conectan</h1>
+    <p class="hero__lead">
+      Organizamos eventos empresariales y promociones de marca en Uruguay.
+      Más de 20 años poniendo equipo, criterio y logística detrás de cada
+      evento — para que lo único que se note sea el resultado.
+    </p>
+    <p class="hero__actions">
+      <a class="btn btn--primary" href="/contacto/">Contactanos</a>
+      <a class="btn" href="/quienes-somos/">Quiénes somos</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="eventos">
+  <div class="wrap">
+    <h2 class="section__title">Eventos</h2>
+    <p class="section__lead">Algunos de los eventos y activaciones que produjimos.</p>
+  </div>
+
+  <ul class="grid grid--eventos">
+    {%- for e in eventos %}
+    <li class="tile">
+      <img src="/assets/img/eventos/{{ e.img }}.jpg" alt="{{ e.alt }}"
+           loading="{% if loop.index <= 4 %}eager{% else %}lazy{% endif %}" decoding="async">
+      <span class="tile__label">{{ e.title }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2 class="section__title">Trabajamos con</h2>
+    <ul class="grid grid--logos grid--logos-compact">
+      {%- for c in clientes.slice(0, 12) %}
+      <li class="logo"><img src="/assets/img/clientes/{{ c.file }}" alt="{{ c.name }}" loading="lazy" decoding="async"></li>
+      {%- endfor %}
+    </ul>
+    <p class="section__more"><a class="link" href="/portfolio/">Ver todos los clientes →</a></p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>¿Tenés un evento en mente?</h2>
+    <p>Contanos qué necesitás y armamos una propuesta.</p>
+    <p class="hero__actions">
+      <a class="btn btn--primary" href="/contacto/">Escribinos</a>
+      <a class="btn btn--ghost" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </p>
+  </div>
+</section>

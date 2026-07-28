@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% if title and page.url != "/" %}{{ title }} — {{ site.title }}{% else %}{{ site.title }} · {{ site.subtitle }}{% endif %}</title>
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ page.url | absoluteUrl(site.url) }}">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title or (site.title + ' · ' + site.subtitle) }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}">
+<meta property="og:site_name" content="{{ site.title }} {{ site.subtitle }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:image" content="{{ '/assets/img/eventos/audi.jpg' | absoluteUrl(site.url) }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/img/marca/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css?v={{ cssHash }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ site.title }} {{ site.subtitle }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phoneHref }}",
+  "areaServed": [{% for c in site.ciudades %}"{{ c }}"{% if not loop.last %},{% endif %}{% endfor %}],
+  "address": { "@type": "PostalAddress", "addressCountry": "UY", "addressLocality": "Montevideo" }
+}
+</script>
+</head>
+
+<body>
+
+<a class="skip" href="#main">Ir al contenido</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="/" aria-label="{{ site.title }} {{ site.subtitle }} — inicio">
+      <img src="/assets/img/marca/logo.png" alt="{{ site.title }} {{ site.subtitle }}" width="180" height="87">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      {%- for item in site.nav %}
+      <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">{{ site.title }}</p>
+      <p class="footer__sub">{{ site.subtitle }}</p>
+    </div>
+    <div class="footer__col">
+      <p class="eyebrow">Dónde</p>
+      <p>{{ site.ciudades | join(" · ") }}</p>
+    </div>
+    <div class="footer__col">
+      <p class="eyebrow">Contacto</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

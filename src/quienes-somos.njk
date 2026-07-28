@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+permalink: /quienes-somos/
+title: Quiénes somos
+description: Un equipo con más de 20 años organizando eventos empresariales y promociones de marca en Montevideo y Punta del Este.
+---
+
+<section class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Quiénes somos</p>
+    <h1>Un equipo detrás de cada evento</h1>
+    <div class="prose">
+      {%- for p in empresa.intro %}
+      <p>{{ p }}</p>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section__title">Servicios</h2>
+    <ul class="grid grid--servicios">
+      {%- for s in empresa.servicios %}
+      <li class="card">
+        <img src="/assets/img/servicios/{{ s.img }}.jpg" alt="{{ s.alt }}" loading="lazy" decoding="async">
+        <div class="card__body">
+          <h3>{{ s.titulo }}</h3>
+          <p>{{ s.texto }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2 class="section__title">Por qué nosotros</h2>
+    <ul class="grid grid--valores">
+      {%- for v in empresa.valores %}
+      <li class="valor">
+        <h3>{{ v.titulo }}</h3>
+        <p>{{ v.texto }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section__title">El equipo</h2>
+    <ul class="grid grid--equipo">
+      {%- for p in empresa.equipo %}
+      <li class="persona">
+        <img src="/assets/img/staff/{{ p.img }}.jpg" alt="Retrato de {{ p.nombre }}, {{ p.rol | lower }}." loading="lazy" decoding="async">
+        <p class="persona__nombre">{{ p.nombre }}</p>
+        <p class="persona__rol">{{ p.rol }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Trabajemos juntos</h2>
+    <p class="hero__actions"><a class="btn btn--primary" href="/contacto/">Contactanos</a></p>
+  </div>
+</section>

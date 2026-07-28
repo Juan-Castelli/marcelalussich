@@ -1,0 +1,21 @@
+# Cloudflare Pages headers.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# El <link> del CSS lleva ?v=<hash del contenido>, así que cada versión es una
+# URL distinta y se puede cachear para siempre sin servir una vieja por error.
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Los nombres de las imágenes no llevan hash. Un día con revalidación: se sirve
+# desde el borde pero se refresca solo si se reemplaza una foto.
+/assets/img/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
