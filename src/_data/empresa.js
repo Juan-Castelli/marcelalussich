@@ -41,6 +41,6 @@ export default {
     { nombre: "Eugenia", rol: "Supervisión y coordinación", img: "eugenia" },
     { nombre: "Julieta", rol: "Cuentas", img: "julieta" },
     { nombre: "Marcela", rol: "Event planning", img: "marcela-planning" },
-    { nombre: "Analía", rol: "Administración", img: "analia" },
+    { nombre: "Eliana", rol: "Administración", img: "eliana" },
   ],
 };
