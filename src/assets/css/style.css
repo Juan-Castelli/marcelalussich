@@ -178,7 +178,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 /* ---------- hero ---------- */
 
-.hero { padding-block: clamp(3.5rem, 9vw, 8rem) clamp(2.5rem, 6vw, 5rem); }
+/* El aire de acá se calibró cuando el hero terminaba en dos botones. Sin
+   ellos el bloque quedó flotando, y abajo peor: el relleno inferior del hero
+   se suma al superior de la sección siguiente y no hay nada en el medio. De
+   ahí la regla del hermano, que corta esa suma. */
+.hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(1.75rem, 4vw, 3.25rem); }
+.hero + .section { padding-top: clamp(1.5rem, 3vw, 2.75rem); }
 .hero .eyebrow { margin-bottom: clamp(1rem, 3vw, 1.6rem); }
 
 .hero__title {
