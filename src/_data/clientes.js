@@ -20,7 +20,7 @@ export default [
   { name: "Revlon", file: "revlon.png" },
   { name: "Pantene", file: "pantene.jpg" },
   { name: "Johnnie Walker", file: "johnnie-walker.jpg" },
-  { name: "Forbes", file: "forbes.png" },
+  { name: "Forbes", file: "forbes.svg" },
   { name: "El Observador", file: "el-observador.png" },
   { name: "America Business Forum", file: "america-business-forum.jpg" },
   { name: "AUDAP", file: "audap.jpg" },

@@ -64,15 +64,18 @@ src/
 
 ## Diseño
 
-Paleta tomada del logo: rojo `#d0383f` y carbón `#161414`. Están en el bloque
-`:root` arriba de `assets/css/style.css` — cambiando esas líneas cambia el sitio
-entero. Tipografía [Jost](https://fonts.google.com/specimen/Jost), que acompaña la
-geométrica del wordmark. Los `.woff2` están en el repo; no se le pide nada a Google.
+Paleta tomada del master del logo: rojo `#e1383e` y carbón `#161414`. Están en el
+bloque `:root` arriba de `assets/css/style.css` — cambiando esas líneas cambia el
+sitio entero. Tipografía [Jost](https://fonts.google.com/specimen/Jost), que
+acompaña la geométrica del wordmark. Los `.woff2` están en el repo; no se le pide
+nada a Google.
 
-Contrastes verificados contra WCAG AA. Ojo con un detalle: el rojo de marca da
-4.86:1 sobre blanco, suficiente para texto pero justo — por eso los enlaces usan
-una variante más oscura (`--red-ink`, 6.91:1) y el rojo pleno queda para fondos,
-bordes y detalles.
+Contrastes verificados contra WCAG AA, y ahí hay una decisión deliberada: el rojo
+del master da 4.34:1 con blanco encima, por debajo del 4.5 que pide el estándar
+para texto normal, y ese color es el fondo de la banda de cierre y de los botones.
+Por eso `--red` es `#dc373d`, cinco puntos más oscuro, que llega a 4.51:1 sin que
+la diferencia se note. Para texto rojo sobre blanco va una variante bastante más
+oscura (`--red-ink`, 6.91:1).
 
 ## Deploy en Cloudflare Pages
 
