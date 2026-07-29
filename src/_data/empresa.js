@@ -3,7 +3,7 @@ export default {
     "Somos un equipo de personas apasionadas por lo que hacemos, que cree en generar experiencias que conectan. Con más de 20 años de experiencia en el mercado, organizamos eventos y acciones promocionales que le permiten a nuestros clientes conectar con su público.",
     "Nuestro equipo se selecciona de manera personalizada para cada experiencia, de modo que se ajuste al estilo y los requerimientos del evento.",
     "Creamos eventos a medida que combinan elegancia, estrategia y excelencia operativa, acompañando a nuestros clientes desde la conceptualización hasta la ejecución final.",
-    "Porque para nosotros, un gran evento no solo se vive; se recuerda.",
+    "Porque para nosotros, un gran evento no solo se vive: se recuerda.",
   ],
 
   // Lista de servicios, tal cual la pasó Marcela. Hoy NO se renderiza en ninguna

@@ -44,10 +44,12 @@
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
   --step-1: clamp(1.15rem, 1.07rem + 0.4vw, 1.4rem);
   --step-2: clamp(1.5rem, 1.32rem + 0.9vw, 2.1rem);
-  --step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
-  /* Solo lo usa el título del hero. El techo baja de 5.6rem a 4.6rem: en
-     desktop 5.6 se comía la pantalla. Móvil queda igual (el piso no cambia). */
-  --step-4: clamp(2.6rem, 1.7rem + 3.9vw, 4.6rem);
+  /* Títulos de las páginas internas (.pagehead h1). */
+  --step-3: clamp(1.8rem, 1.45rem + 1.55vw, 2.6rem);
+  /* Solo lo usa el título del hero. Los techos de 3 y 4 se fueron bajando a
+     mano: en desktop se comían la pantalla. El piso casi no se movió, así que
+     en móvil se ven igual que antes. */
+  --step-4: clamp(2.4rem, 1.75rem + 2.9vw, 3.8rem);
 
   --gap: clamp(1rem, 0.6rem + 1.6vw, 1.75rem);
   --pad: clamp(3rem, 2rem + 5vw, 7rem);
@@ -218,7 +220,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 .pagehead { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 4vw, 3rem); }
 .pagehead .eyebrow { margin-bottom: .9rem; }
-.pagehead h1 { font-size: var(--step-3); font-weight: 300; letter-spacing: -.02em; max-width: 20ch; }
+/* El :not() es por /portfolio/, donde el título de la página es la propia
+   volanta chica y no hay titular grande debajo. Sin ese titular el aire de
+   siempre dejaba un hueco enorme antes de la grilla, de ahí el --slim. */
+.pagehead h1:not(.eyebrow) { font-size: var(--step-3); font-weight: 300; letter-spacing: -.02em; max-width: 20ch; }
+.pagehead--slim { padding-bottom: 0; }
+.pagehead--slim + .section { padding-top: clamp(1.75rem, 4vw, 3rem); }
 
 .prose { max-width: 42rem; margin-top: clamp(1.25rem, 3vw, 1.75rem); color: var(--ink-soft); }
 .prose > * + * { margin-top: 1.1em; }
@@ -335,32 +342,37 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 /* ---------- logos de clientes ---------- */
 
-/* Flex y no grid: los 29 logos nunca completan la última fila, y con grid los
-   huecos sobrantes quedaban como bloques grises (el fondo del contenedor
-   asomando entre las celdas). Con flex-wrap + center la fila incompleta queda
-   centrada y no sobra nada. Las líneas de separación las dibuja cada celda con
-   su propio outline, que al ser exterior se superpone en el hueco de 1px y
-   pinta una sola línea limpia. */
+/* Las líneas de separación las dibuja cada celda con su propio outline, y no
+   el contenedor con un fondo que asoma entre las celdas: son 29 logos, la
+   última fila nunca se completa, y con la técnica del fondo los huecos
+   sobrantes quedaban como bloques grises. El outline es exterior, así que se
+   superpone en el hueco de 1px y pinta una sola línea limpia. */
 .grid--logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* 47% y no 50%: con 50% justo el segundo track no entra por culpa del gap y
+     en el teléfono quedaba un logo por fila, 29 filas de scroll. */
+  grid-template-columns: repeat(auto-fill, minmax(min(47%, 10.5rem), 1fr));
   gap: 1px;
 }
 
 .logo {
-  flex: 0 1 auto;
-  width: clamp(8.5rem, 15vw, 11.5rem);
-  display: grid; place-items: center;
+  position: relative;
   background: var(--paper);
   outline: 1px solid var(--line);
   aspect-ratio: 3 / 2;
-  padding: clamp(.9rem, 2.2vw, 1.5rem);
   transition: background-color .25s;
 }
+
+/* La caja del logo se define con porcentajes de la celda y no con padding +
+   max-width. Varios logos vienen con fondo propio y sin transparencia (Amex,
+   Forbes, Fasano, audap): con max-width llenaban la celda entera de punta a
+   punta y se leían como bloques grises al lado de los que sí son PNG con
+   fondo transparente. Acotados a esta caja, todos pesan parecido. */
 .logo img {
-  max-width: 100%; max-height: 100%;
-  width: auto; object-fit: contain;
+  position: absolute;
+  top: 50%; left: 50%;
+  translate: -50% -50%;
+  width: 66%; height: 58%;
+  object-fit: contain;
   filter: grayscale(1);
   opacity: .72;
   transition: filter .3s, opacity .3s;
