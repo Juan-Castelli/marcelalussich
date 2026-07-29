@@ -1,13 +1,28 @@
 # URLs del WordPress anterior. Sin esto se pierden los enlaces ya publicados
 # y lo que tenga indexado Google.
+#
+# OJO: Pages hace match exacto y NO normaliza la barra final. WordPress servía
+# todo con barra (/about-us/), así que esa es la forma que está indexada y en
+# los favoritos de la gente. Cada regla necesita las dos variantes.
+
 /home                 /                  301
+/home/                /                  301
 /home/page/*          /                  301
+
 /about-us             /quienes-somos/    301
+/about-us/            /quienes-somos/    301
+
 /contact-us           /contacto/         301
+/contact-us/          /contacto/         301
 /contactenos          /contacto/         301
+/contactenos/         /contacto/         301
+
 /portfolio/page/*     /portfolio/        301
 
 # WordPress ya no existe detrás de este dominio.
+/wp-admin             /                  301
+/wp-admin/            /                  301
 /wp-admin/*           /                  301
 /wp-login.php         /                  301
 /feed                 /                  301
+/feed/                /                  301
