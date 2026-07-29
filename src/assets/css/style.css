@@ -226,18 +226,21 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 /* ---------- grilla de eventos ---------- */
 
+/* Cuadrada: de las fotos de eventos la mayoría vienen verticales y el resto
+   horizontales, y el cuadrado es el recorte que menos pierde en ambos casos. */
 .grid--eventos {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-  width: min(100% - 2.5rem, 90rem);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr));
+  width: min(100% - 2.5rem, 96rem);
   margin-inline: auto;
   margin-top: clamp(1.75rem, 4vw, 2.75rem);
+  gap: clamp(.5rem, 1.2vw, 1rem);
 }
 
 .tile {
   position: relative;
   overflow: hidden;
   background: var(--tint);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
 }
 
 .tile img {
@@ -256,20 +259,21 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 .tile__label {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
-  padding: 1.1rem 1.25rem;
+  padding: .85rem .95rem;
   font-family: var(--display);
-  font-size: var(--step-1);
+  font-size: var(--step-0);
   font-weight: 400;
   letter-spacing: .02em;
+  line-height: 1.25;
   color: #fff;
 }
 
 .tile__label::before {
   content: "";
   display: block;
-  width: 2rem; height: 2px;
+  width: 1.5rem; height: 2px;
   background: var(--red);
-  margin-bottom: .6rem;
+  margin-bottom: .5rem;
   transition: width .35s cubic-bezier(.2,.7,.3,1);
 }
 

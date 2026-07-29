@@ -38,7 +38,6 @@ export default {
   equipo: [
     { nombre: "Marcela", rol: "Directora", img: "marcela-directora" },
     { nombre: "Eugenia", rol: "Supervisión y coordinación", img: "eugenia" },
-    { nombre: "Julieta", rol: "Cuentas", img: "julieta" },
     { nombre: "Marcela", rol: "Event planning", img: "marcela-planning" },
     { nombre: "Eliana", rol: "Administración", img: "eliana" },
   ],
