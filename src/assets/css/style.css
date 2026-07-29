@@ -141,8 +141,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 .btn--primary { background: var(--red); border-color: var(--red); color: #fff; }
 .btn--primary:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
 
-.btn--ghost { border-color: rgb(255 255 255 / .5); color: #fff; text-transform: none; letter-spacing: .02em; }
-.btn--ghost:hover { background: #fff; color: var(--red-dark); border-color: #fff; }
 
 /* ---------- masthead ---------- */
 
