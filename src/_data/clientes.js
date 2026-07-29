@@ -32,4 +32,8 @@ export default [
     file: "punta-del-este-convention-center.png",
   },
   { name: "Fasano", file: "fasano.jpg" },
+  // Único SVG del lote: pesa 1,7 KB contra los 20-50 KB de los PNG y se ve
+  // nítido en cualquier pantalla. Si aparecen más logos, este es el formato
+  // a pedir.
+  { name: "BYD", file: "byd.svg" },
 ];
