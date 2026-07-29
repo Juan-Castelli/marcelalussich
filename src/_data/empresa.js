@@ -1,39 +1,30 @@
 export default {
   intro: [
-    "Somos un equipo de personas apasionadas en lo que hacemos que creemos en generar experiencias que conectan. Nuestro objetivo es proveer un servicio de organización de eventos y promociones empresariales que les permita a nuestros clientes conectar con su público y consigo mismos.",
-    "Con más de 20 años de experiencia en el rubro, trabajamos para una variedad de sectores incluyendo el bancario, la salud, el automotriz y los grandes comercios.",
-    "Nuestro equipo se selecciona de manera personalizada para cada experiencia de modo que se ajuste al estilo y requerimientos del evento.",
+    "Somos un equipo de personas apasionadas por lo que hacemos, que cree en generar experiencias que conectan. Con más de 20 años de experiencia en el mercado, organizamos eventos y acciones promocionales que le permiten a nuestros clientes conectar con su público.",
+    "Nuestro equipo se selecciona de manera personalizada para cada experiencia, de modo que se ajuste al estilo y los requerimientos del evento.",
+    "Creamos eventos a medida que combinan elegancia, estrategia y excelencia operativa, acompañando a nuestros clientes desde la conceptualización hasta la ejecución final.",
+    "Porque para nosotros, un gran evento no solo se vive; se recuerda.",
   ],
 
+  // Lista de servicios, tal cual la pasó Marcela. Hoy NO se renderiza en ninguna
+  // página: alimenta la descripción del sitio y el JSON-LD (schema.org), que es
+  // de donde Google saca de qué va la empresa. Si algún día se quiere una
+  // sección "Servicios" de verdad, el contenido ya está acá.
   servicios: [
-    {
-      titulo: "Eventos empresariales",
-      texto:
-        "Inauguraciones, fiestas, despedidas de fin de año. Congresos nacionales, regionales o internacionales, apoyo a convenciones y ferias de negocios.",
-      img: "eventos-empresariales",
-      alt: "Anfitriones recibiendo invitados en un evento empresarial.",
-    },
-    {
-      titulo: "Promociones de marca",
-      texto:
-        "Promociones y eventos publicitarios, desde muestras o lanzamientos de productos, hitos de marca, experiencias de engagement con tus clientes y más.",
-      img: "promociones-de-marca",
-      alt: "Activación de marca con pantallas y personal promocional.",
-    },
-    {
-      titulo: "Azafatas & promotoras",
-      texto:
-        "Nos enfocamos principalmente en eventos de carácter empresarial, experiencias y promociones de marca, pero siempre estamos creciendo a nuevos rubros.",
-      img: "azafatas-promotoras",
-      alt: "Equipo de azafatas uniformadas en la recepción de un evento.",
-    },
+    "Planificación integral para eventos empresariales y sociales",
+    "Coordinación logística, producción y gestión integral para eventos",
+    "Azafatas para eventos corporativos",
+    "Activaciones y experiencias de marca",
+    "Lanzamientos de producto",
+    "Presentaciones de productos y servicios",
+    "Acciones de relaciones públicas",
+    "Servicio de valet parking",
   ],
 
   // La sección "Por qué nosotros" del sitio anterior eran estas cuatro palabras
   // sueltas, sin texto. No se está mostrando. Queda acá como registro por si se
   // decide recuperarla con contenido real detrás de cada una.
   // valores: ["Experiencia", "Equipo", "Dedicación", "Éxito"],
-
 
   equipo: [
     { nombre: "Marcela", rol: "Directora", img: "marcela-directora" },

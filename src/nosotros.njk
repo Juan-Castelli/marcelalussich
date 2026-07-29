@@ -1,36 +1,19 @@
 ---
 layout: layouts/base.njk
-permalink: /quienes-somos/
-title: Quiénes somos
-description: Un equipo con más de 20 años organizando eventos empresariales y promociones de marca en Montevideo y Punta del Este.
+permalink: /nosotros/
+title: Nosotros
+description: Más de 20 años creando eventos a medida y acciones promocionales en Montevideo y Punta del Este. Conocé al equipo detrás de cada evento.
 ---
 
 <section class="pagehead">
   <div class="wrap">
-    <p class="eyebrow">Quiénes somos</p>
+    <p class="eyebrow">Nosotros</p>
     <h1>Un equipo detrás de cada evento</h1>
     <div class="prose">
       {%- for p in empresa.intro %}
       <p>{{ p }}</p>
       {%- endfor %}
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <h2 class="section__title">Servicios</h2>
-    <ul class="grid grid--servicios">
-      {%- for s in empresa.servicios %}
-      <li class="card">
-        <img src="/assets/img/servicios/{{ s.img }}.jpg" alt="{{ s.alt }}" loading="lazy" decoding="async">
-        <div class="card__body">
-          <h3>{{ s.titulo }}</h3>
-          <p>{{ s.texto }}</p>
-        </div>
-      </li>
-      {%- endfor %}
-    </ul>
   </div>
 </section>
 

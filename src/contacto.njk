@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 permalink: /contacto/
 title: Contacto
-description: Escribinos a info@marcelalussich.com.uy o llamanos al +598 97197735. Montevideo y Punta del Este.
+description: Escribinos a info@marcelalussich.com.uy o por WhatsApp al +598 97197735. Montevideo y Punta del Este.
 ---
 
 <section class="pagehead">
@@ -26,8 +26,16 @@ description: Escribinos a info@marcelalussich.com.uy o llamanos al +598 97197735
         <p class="contacto__dato"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </li>
       <li>
-        <p class="eyebrow">Teléfono</p>
-        <p class="contacto__dato"><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        <p class="eyebrow">WhatsApp</p>
+        <p class="contacto__dato">
+          <a href="{{ site.whatsapp }}" rel="noopener">{{ site.phone }}</a>
+        </p>
+      </li>
+      <li>
+        <p class="eyebrow">Instagram</p>
+        <p class="contacto__dato">
+          <a href="{{ site.instagram }}" rel="me noopener">{{ site.instagramHandle }}</a>
+        </p>
       </li>
       <li>
         <p class="eyebrow">Dónde estamos</p>

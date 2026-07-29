@@ -24,7 +24,7 @@ para cambiar textos, sumar un evento o agregar un cliente.
 | `_data/site.js` | Nombre, mail, teléfono, ciudades, menú de navegación |
 | `_data/eventos.js` | Los eventos de la home: título, imagen y texto alternativo |
 | `_data/clientes.js` | Los logos de la página Clientes |
-| `_data/empresa.js` | Textos de Quiénes somos: intro, servicios, valores y equipo |
+| `_data/empresa.js` | Textos de Nosotros: intro y equipo. También la lista de servicios, que hoy no se muestra en ninguna página y solo alimenta el JSON-LD |
 
 ### Sumar un evento
 
@@ -56,9 +56,9 @@ src/
   assets/
     css/style.css         todo el CSS, con la paleta arriba de todo
     fonts/                Jost (variable, subsets latin y latin-ext)
-    img/{eventos,clientes,servicios,staff,marca}/
+    img/{eventos,clientes,staff,marca}/
   root/                   se copia tal cual a la raíz (_headers, _redirects, robots.txt)
-  index.njk  quienes-somos.njk  portfolio.njk  contacto.njk
+  index.njk  nosotros.njk  portfolio.njk  contacto.njk
   404.njk  sitemap.njk
 ```
 
@@ -95,7 +95,7 @@ Contenido importado del export de julio de 2026. Cambios respecto del sitio viej
 
 - La home era un loop de posts paginado (`/home/`, `/home/page/2/`); ahora es una
   sola grilla en `/`.
-- `/contact-us/` pasó a `/contacto/`, y `/about-us/` a `/quienes-somos/`. Las URLs
+- `/contact-us/` pasó a `/contacto/`, y `/about-us/` a `/nosotros/`. Las URLs
   viejas redirigen con 301.
 - Dos fotos del equipo estaban en formato HEIC y la portada del evento de Audi era
   un PDF — no se veían en la mayoría de los navegadores. Convertidas a JPEG.

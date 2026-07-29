@@ -9,8 +9,13 @@
 /home/                /                  301
 /home/page/*          /                  301
 
-/about-us             /quienes-somos/    301
-/about-us/            /quienes-somos/    301
+/about-us             /nosotros/         301
+/about-us/            /nosotros/         301
+
+# /quienes-somos/ estuvo publicado unas semanas después de la migración,
+# antes de que la página pasara a llamarse /nosotros/.
+/quienes-somos        /nosotros/         301
+/quienes-somos/       /nosotros/         301
 
 /contact-us           /contacto/         301
 /contact-us/          /contacto/         301

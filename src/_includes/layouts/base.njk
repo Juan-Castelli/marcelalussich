@@ -30,8 +30,16 @@
   "url": "{{ site.url }}",
   "email": "{{ site.email }}",
   "telephone": "{{ site.phoneHref }}",
+  "sameAs": ["{{ site.instagram }}"],
   "areaServed": [{% for c in site.ciudades %}"{{ c }}"{% if not loop.last %},{% endif %}{% endfor %}],
-  "address": { "@type": "PostalAddress", "addressCountry": "UY", "addressLocality": "Montevideo" }
+  "address": { "@type": "PostalAddress", "addressCountry": "UY", "addressLocality": "Montevideo" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios",
+    "itemListElement": [{% for s in empresa.servicios %}
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{ s }}" } }{% if not loop.last %},{% endif %}{% endfor %}
+    ]
+  }
 }
 </script>
 </head>
@@ -70,7 +78,8 @@
     <div class="footer__col">
       <p class="eyebrow">Contacto</p>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-      <p><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></p>
+      <p><a href="{{ site.whatsapp }}" rel="noopener">{{ site.phone }}</a></p>
+      <p><a href="{{ site.instagram }}" rel="me noopener">{{ site.instagramHandle }}</a></p>
     </div>
   </div>
 </footer>

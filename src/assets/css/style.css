@@ -45,7 +45,9 @@
   --step-1: clamp(1.15rem, 1.07rem + 0.4vw, 1.4rem);
   --step-2: clamp(1.5rem, 1.32rem + 0.9vw, 2.1rem);
   --step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
-  --step-4: clamp(2.6rem, 1.6rem + 4.6vw, 5.6rem);
+  /* Solo lo usa el título del hero. El techo baja de 5.6rem a 4.6rem: en
+     desktop 5.6 se comía la pantalla. Móvil queda igual (el piso no cambia). */
+  --step-4: clamp(2.6rem, 1.7rem + 3.9vw, 4.6rem);
 
   --gap: clamp(1rem, 0.6rem + 1.6vw, 1.75rem);
   --pad: clamp(3rem, 2rem + 5vw, 7rem);
@@ -333,18 +335,27 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
 
 /* ---------- logos de clientes ---------- */
 
+/* Flex y no grid: los 29 logos nunca completan la última fila, y con grid los
+   huecos sobrantes quedaban como bloques grises (el fondo del contenedor
+   asomando entre las celdas). Con flex-wrap + center la fila incompleta queda
+   centrada y no sobra nada. Las líneas de separación las dibuja cada celda con
+   su propio outline, que al ser exterior se superpone en el hueco de 1px y
+   pinta una sola línea limpia. */
 .grid--logos {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
 }
 
 .logo {
+  flex: 0 1 auto;
+  width: clamp(8.5rem, 15vw, 11.5rem);
   display: grid; place-items: center;
   background: var(--paper);
+  outline: 1px solid var(--line);
   aspect-ratio: 3 / 2;
-  padding: clamp(1rem, 2.5vw, 1.6rem);
+  padding: clamp(.9rem, 2.2vw, 1.5rem);
   transition: background-color .25s;
 }
 .logo img {
