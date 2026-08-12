@@ -1,6 +1,6 @@
 /* =============================================================
    marcelalussich.com.uy
-   Paleta tomada del master del logo: rojo #e1383e y carbón #161414.
+   Paleta tomada del logo del diseñador: rojo #db2f36 y carbón #1a171c.
    Jost está autohospedada; no se pide nada a terceros.
    ============================================================= */
 
@@ -27,13 +27,14 @@
 
 :root {
   /* Marca */
-  /* Rojo de marca. El master del logo trae #e1383e; acá va cinco puntos más
-     oscuro porque con blanco encima #e1383e da 4.34:1 y el mínimo accesible
-     para texto es 4.5 — y este color es el fondo de la banda de cierre y de
-     los botones, ambos con texto blanco. #dc373d da 4.51:1 y la diferencia
-     con el master no se ve. El rojo anterior (#d0383f) lo muestreé del PNG
-     heredado del WordPress, que venía desaturado respecto del original. */
-  --red: #dc373d;
+  /* Rojo de marca, exacto como lo entregó el diseñador. Con blanco encima da
+     4.70:1, arriba del 4.5 que pide WCAG AA para texto normal, así que esta
+     vez no hace falta oscurecerlo: es fondo de la banda de cierre y de los
+     botones, ambos con texto blanco. (El logo anterior obligaba a bajarlo
+     cinco puntos; este no.) El negro del logo nuevo es #1a171c, apenas más
+     frío que el --ink de acá; la diferencia es imperceptible y los grises
+     suaves del sitio están derivados del cálido, así que no lo toco. */
+  --red: #db2f36;
   --red-ink: #a82a31; /* variante oscura, para texto sobre blanco */
   --red-dark: #8f2229;
   --ink: #161414;
@@ -163,10 +164,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.1
   padding-block: clamp(.7rem, 2vw, 1.1rem);
 }
 
-/* El SVG viene recortado a ras del dibujo, así que a igual altura se lee más
-   grande que el PNG viejo, que traía margen adentro. Y se mide por alto, que
-   es lo que define cuánto ocupa la cabecera. */
-.brand img { height: clamp(60px, 6.5vw, 84px); width: auto; }
+/* Se mide por alto, que es lo que define cuánto ocupa la cabecera, y el SVG
+   viene recortado a ras del dibujo. El lockup del diseñador es horizontal
+   (3.62:1 contra 1.62:1 del anterior), así que a igual altura el wordmark se
+   lee bastante más grande: de ahí que estos valores sean más chicos que los
+   que había antes. */
+.brand img { height: clamp(44px, 4.6vw, 60px); width: auto; }
 
 .nav {
   display: flex; flex-wrap: wrap;

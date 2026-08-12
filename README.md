@@ -60,22 +60,31 @@ src/
   root/                   se copia tal cual a la raíz (_headers, _redirects, robots.txt)
   index.njk  nosotros.njk  portfolio.njk  contacto.njk
   404.njk  sitemap.njk
+
+marca-master/             originales del logo (PDF, JPG, PNG). NO se publica.
 ```
 
 ## Diseño
 
-Paleta tomada del master del logo: rojo `#e1383e` y carbón `#161414`. Están en el
-bloque `:root` arriba de `assets/css/style.css` — cambiando esas líneas cambia el
-sitio entero. Tipografía [Jost](https://fonts.google.com/specimen/Jost), que
+Paleta tomada del logo del diseñador: rojo `#db2f36` y carbón `#1a171c`. Están en
+el bloque `:root` arriba de `assets/css/style.css` — cambiando esas líneas cambia
+el sitio entero. Tipografía [Jost](https://fonts.google.com/specimen/Jost), que
 acompaña la geométrica del wordmark. Los `.woff2` están en el repo; no se le pide
 nada a Google.
 
-Contrastes verificados contra WCAG AA, y ahí hay una decisión deliberada: el rojo
-del master da 4.34:1 con blanco encima, por debajo del 4.5 que pide el estándar
-para texto normal, y ese color es el fondo de la banda de cierre y de los botones.
-Por eso `--red` es `#dc373d`, cinco puntos más oscuro, que llega a 4.51:1 sin que
-la diferencia se note. Para texto rojo sobre blanco va una variante bastante más
-oscura (`--red-ink`, 6.91:1).
+El rojo va exacto, sin retocar: da 4.70:1 con blanco encima, arriba del 4.5 que
+pide WCAG AA para texto normal, y ese color es el fondo de la banda de cierre y de
+los botones. Para texto rojo sobre blanco hay una variante más oscura (`--red-ink`,
+6.91:1). El `--ink` del sitio es `#161414` y no el `#1a171c` del logo a propósito:
+la diferencia es imperceptible y los grises suaves están derivados del cálido.
+
+El logo publicado es `assets/img/marca/logo.svg`, con el `viewBox` recortado a la
+caja real del dibujo — el archivo del diseñador venía con un tercio del ancho y
+más de la mitad del alto en margen vacío, y el espaciado conviene que lo decida el
+CSS. Los otros formatos que mandó (PDF, JPG, PNG) están en `marca-master/`, fuera
+de `src/`, porque **todo lo que está bajo `src/assets` se publica** y el PDF solo
+pesa 676 KB. El favicon reusa los dos trazados del símbolo, copiados del mismo
+archivo.
 
 ## Deploy en Cloudflare Pages
 

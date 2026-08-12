@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Marcela Lussich">
+  <!-- El símbolo son los dos trazados rojos del logo del diseñador, copiados
+       tal cual de MLUSSICH_logo horizontal.svg: la cuña de arriba a la derecha
+       y el círculo con la L calada. Antes acá había una aproximación dibujada
+       a mano. El transform los lleva de sus coordenadas en el logo (arrancan
+       en 21.8,17.75 y miden 25.4) a una caja de 24 centrada en el lienzo. -->
   <rect width="32" height="32" rx="6" fill="#ffffff"/>
-  <circle cx="16" cy="16" r="11" fill="#dc373d"/>
-  <path d="M15 8.5h2.4v13.2H26v2.4H15z" fill="#ffffff"/>
+  <g fill="#db2f36" transform="translate(-16.58,-12.76) scale(0.9441)">
+    <path d="M35.47,32.72H47a13.5,13.5,0,0,0,.22-2.31A12.71,12.71,0,0,0,35.47,17.75Z"/>
+    <path d="M35.47,35.4H32.54s0-11.19,0-17.53A12.7,12.7,0,1,0,46.18,35.4Z"/>
+  </g>
 </svg>
