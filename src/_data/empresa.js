@@ -30,6 +30,6 @@ export default {
     { nombre: "Marcela", rol: "Directora", img: "marcela-directora" },
     { nombre: "Eugenia", rol: "Supervisión y coordinación", img: "eugenia" },
     { nombre: "Marcela", rol: "Event planning", img: "marcela-planning" },
-    { nombre: "Eliana", rol: "Administración", img: "eliana" },
+    { nombre: "Eliana", rol: "Administración", img: "eliana-2026" },
   ],
 };

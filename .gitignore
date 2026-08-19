@@ -5,3 +5,9 @@ _site/
 .cache/
 .env
 .env.*
+
+# Material suelto en la raíz: originales sin procesar que se dejan acá para
+# trabajar. No van al repo — el .mov solo pesa 91 MB y en git no se borra más.
+/*.mov
+/*.mp4
+/WhatsApp*
